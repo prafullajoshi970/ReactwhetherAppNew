@@ -58,12 +58,12 @@ function App() {
             </h5>
             <h6 className="weatherTemp">{((data.main.temp))}°C</h6>
             <div className="minmax">
-                         <h2>Min-Temp <h4 > {data.main.temp_min}°C </h4></h2>
+                         <h2>Min-Temp <h4 >|| {data.main.temp_min}°C ||</h4></h2>
              
                     
-                     <h2>Max-Temp<h4> {data.main.temp_max}°C </h4>  </h2>
+                     <h2>Max-Temp<h4>|| {data.main.temp_max}°C ||</h4>  </h2>
                      
-                     <h2>Humidity<h4> {data.main.humidity}</h4></h2>
+                     <h2>Humidity<h4> ||{data.main.humidity} ||</h4></h2>
                       
                      </div>
           </div>
