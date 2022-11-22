@@ -30,7 +30,9 @@
 }
 .inputt{
   display:flex;
-  width:50vw
+  width:50vw;
+  height:12vh;
+  
 }
 .display{
   display: flex;
