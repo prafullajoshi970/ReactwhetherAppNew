@@ -1,4 +1,4 @@
-.wetherBg{
+.background{
   background-color:aqua;
   height: 50vh;
   display: flex;
@@ -21,10 +21,10 @@
   width: 100px;
   height: 100px;
 }
-.weatherCity{
+.Cityname{
   font-size: 35px;
 }
-.weatherTemp{
+.Temperature{
   font-size:55px;
   font-weight: 700;
 }
@@ -39,4 +39,11 @@
   justify-content: center;
   align-items: center;
   margin-left: 20px;
+}
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btn{
+  background-color: blue;
+  color:white
 }

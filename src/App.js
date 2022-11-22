@@ -34,14 +34,15 @@ function App() {
 
   return (
     <div>
-      <div className="wetherBg">
+      <div className="background">
         <h1 className="heading">React Weather App</h1>
 
         <div className="inputt">
           <input type="text" className="form-control"
-            value={City}
+           
+            placeholder="search city here"
             onChange={ChangeInput} />
-          <button className="btn btn-primary" type="button"
+          <button className="btn" type="button"
             onClick={Search}
           >Search</button>
         </div>
@@ -50,13 +51,13 @@ function App() {
       {Object.keys(data).length > 0 &&
         <div className="display">
 
-          <div className="shadow rounded wetherResultBox">
+          <div className="shadow">
            
 
-            <h5 className="weatherCity">
+            <h5 className="Cityname">
               {data?.name}
             </h5>
-            <h6 className="weatherTemp">{((data.main.temp))}°C</h6>
+            <h6 className="Temperature">{((data.main.temp))}°C</h6>
             <div className="minmax">
                          <h2>Min-Temp <h4 > {data.main.temp_min}°C </h4></h2>
              
