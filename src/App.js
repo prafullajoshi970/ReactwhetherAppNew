@@ -13,7 +13,7 @@ function App() {
 
   const getWetherDetails = (cityName) => {
     if (!cityName) return
-    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey
+    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + apiKey
     axios.get(apiURL).then((res) => {
       console.log("response", res.data)
       setData(res.data)
@@ -56,7 +56,16 @@ function App() {
             <h5 className="weathorCity">
               {data?.name}
             </h5>
-            <h6 className="weathorTemp">{((data?.main?.temp) - 273.15).toFixed(2)}°C</h6>
+            <h6 className="weathorTemp">{((data?.main?.temp))}°C</h6>
+            <div className="minmax">
+                         <h2>Min-Temp <h4 > {data?.main?.temp_min}°C </h4></h2>
+             
+                    
+                     <h2>Max-Temp<h4> {data?.main?.temp_max}°C </h4>  </h2>
+                     
+                     <h2>Humidity<h4> {data?.main?.humidity}</h4></h2>
+                      
+                     </div>
           </div>
         </div>
       }
