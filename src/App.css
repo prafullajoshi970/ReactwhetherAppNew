@@ -1,4 +1,5 @@
 .wetherBg{
+  background-color:aqua;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -6,23 +7,34 @@
   justify-content: center;
 }
 .heading{
-  color:white;
-  font-weight: 700;
+  font-size: 10vh;
+  font-weight:700;
+  margin-bottom: 25px;
 }
 .wetherResultBox{
   margin: auto;
   width: 500px;
   height: 300px;
 }
-.weathorIcon{
+.weatherIcon{
   margin-top: 2rem;
   width: 100px;
   height: 100px;
 }
-.weathorCity{
+.weatherCity{
   font-size: 35px;
 }
-.weathorTemp{
+.weatherTemp{
   font-size:55px;
   font-weight: 700;
+}
+.inputt{
+  display:flex;
+  width:50vw
+}
+.display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
 }

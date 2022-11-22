@@ -6,57 +6,57 @@ import './App.css';
 function App() {
 
 
-  const apiKey = "700cd2716d1ea414ff0fe1483e04908c"
-  const [inputCity, setInputCity] = useState("")
+
+  const [City, setCity] = useState("mumbai")
   const [data, setData] = useState({})
 
 
-  const getWetherDetails = (cityName) => {
+  const getWether = (cityName) => {
     if (!cityName) return
-    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + apiKey
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=700cd2716d1ea414ff0fe1483e04908c`
     axios.get(apiURL).then((res) => {
-      console.log("response", res.data)
+  
       setData(res.data)
     }).catch((err) => {
-      console.log("err", err)
+      
     })
   }
 
-  const handleChangeInput = (e) => {
+  const ChangeInput = (e) => {
     console.log("value", e.target.value)
-    setInputCity(e.target.value)
+    setCity(e.target.value)
   }
 
-  const handleSearch = () => {
-    getWetherDetails(inputCity)
+  const Search = () => {
+    getWether(City)
   }
 
 
   return (
-    <div className="col-md-12">
+    <div>
       <div className="wetherBg">
-        <h1 className="heading">Weather App</h1>
+        <h1 className="heading">React Weather App</h1>
 
-        <div className="d-grid gap-3 col-4 mt-4">
+        <div className="inputt">
           <input type="text" className="form-control"
-            value={inputCity}
-            onChange={handleChangeInput} />
+            value={City}
+            onChange={ChangeInput} />
           <button className="btn btn-primary" type="button"
-            onClick={handleSearch}
+            onClick={Search}
           >Search</button>
         </div>
       </div>
 
       {Object.keys(data).length > 0 &&
-        <div className="col-md-12 text-center mt-5">
+        <div className="display">
 
           <div className="shadow rounded wetherResultBox">
            
 
-            <h5 className="weathorCity">
+            <h5 className="weatherCity">
               {data?.name}
             </h5>
-            <h6 className="weathorTemp">{((data.main.temp))}°C</h6>
+            <h6 className="weatherTemp">{((data.main.temp))}°C</h6>
             <div className="minmax">
                          <h2>Min-Temp <h4 > {data.main.temp_min}°C </h4></h2>
              
